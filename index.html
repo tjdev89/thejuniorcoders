@@ -19,6 +19,11 @@
       color: #333;
       padding: 40px 20px;
     }
+    .logo {
+      width: 120px;
+      margin: 0 auto 20px;
+      display: block;
+    }
     h1 {
       font-size: 3.5rem;
       color: #ff9900;
@@ -64,10 +69,24 @@
     button:hover {
       background-color: #e68900;
     }
+    #countdown {
+      font-size: 1.5rem;
+      color: #d35400;
+      margin: 20px 0;
+    }
+    #launch-animation {
+      display: none;
+      max-width: 200px;
+      margin: 20px auto;
+    }
   </style>
 </head>
 <body>
 
+  <!-- Logo -->
+  <img src="logo-placeholder.png" alt="Junior Coders Logo" class="logo" />
+
+  <!-- Animation -->
   <div class="animation">
     <lottie-player
       src="https://lottie.host/1c186ad2-68e2-48c3-9a61-78db58b05ec5/Bfnw4cyrzv.json"
@@ -82,12 +101,54 @@
   <h1>Junior Coders</h1>
   <p>🖍️ Kids are learning to code — and we're almost ready to launch!<br>Stay in the loop!</p>
 
+  <!-- Countdown Timer -->
+  <div id="countdown">⏳ Countdown: Loading...</div>
+
+  <!-- Image -->
   <img src="kids-coding.png" alt="Kids learning to code" class="hero-image" />
 
+  <!-- Email Form -->
   <form action="https://formspree.io/f/xzzenkzl" method="POST">
     <input type="email" name="email" placeholder="Enter your email" required />
     <button type="submit">Notify Me</button>
   </form>
+
+  <!-- Launch Fireworks Animation -->
+  <div id="launch-animation">
+    <lottie-player
+      src="https://lottie.host/c40c97df-d9c1-4b07-a925-7e95c556b7f5/Bdpjw92Yen.json"
+      background="transparent"
+      speed="1"
+      loop
+      autoplay>
+    </lottie-player>
+  </div>
+
+  <script>
+    const countdownEl = document.getElementById('countdown');
+    const launchAnimation = document.getElementById('launch-animation');
+
+    const launchDate = new Date("2025-06-20T00:00:00").getTime();
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance <= 0) {
+        clearInterval(interval);
+        countdownEl.innerHTML = "🎉 We’ve launched!";
+        launchAnimation.style.display = "block";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `⏳ Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
 
 </body>
 </html>
