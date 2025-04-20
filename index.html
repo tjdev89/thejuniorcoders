@@ -15,45 +15,39 @@
     body {
       font-family: 'Fredoka One', cursive;
       background: linear-gradient(180deg, #fff7e6 0%, #ffe0b3 100%);
-      text-align: center;
       color: #333;
       padding: 20px;
     }
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
+    header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
     .logo {
-      width: 100px;
-      margin: 0 auto 10px;
-      display: block;
+      max-width: 140px;
+      height: auto;
     }
-    .animation {
-      max-width: 250px;
-      margin: 20px auto 20px;
+    main {
+      text-align: center;
+      margin-top: 20px;
     }
     h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       color: #ff9900;
       margin-bottom: 10px;
     }
     p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      line-height: 1.5;
-    }
-    #countdown {
-      font-size: 1.2rem;
-      color: #d35400;
+      font-size: 1.3rem;
       margin-bottom: 20px;
     }
-    .hero-image {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 10px auto 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    .countdown {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    .animation {
+      max-width: 300px;
+      margin: 0 auto 25px;
     }
     form {
       margin-top: 10px;
@@ -79,73 +73,55 @@
     button:hover {
       background-color: #e68900;
     }
-    #launch-animation {
-      display: none;
-      max-width: 200px;
-      margin: 30px auto;
+    .coding-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 30px auto 0;
     }
   </style>
 </head>
 <body>
-  <div class="container">
 
-    <!-- Logo -->
+  <header>
     <img src="logo-placeholder.png" alt="Junior Coders Logo" class="logo" />
+  </header>
 
-    <!-- Lottie animation -->
+  <main>
+    <h1>Junior Coders</h1>
+    <p>🖍️ Kids are learning to code — and we're almost ready to launch!<br>Stay in the loop!</p>
+
+    <div class="countdown" id="countdown">⏳ Countdown: Loading...</div>
+
     <div class="animation">
       <lottie-player
         src="https://lottie.host/1c186ad2-68e2-48c3-9a61-78db58b05ec5/Bfnw4cyrzv.json"
         background="transparent"
         speed="1"
-        style="width: 100%; height: 250px;"
+        style="width: 100%; height: 300px;"
         loop
         autoplay>
       </lottie-player>
     </div>
 
-    <h1>Junior Coders</h1>
-    <p>🖍️ Kids are learning to code — and we're almost ready to launch!<br>Stay in the loop!</p>
-
-    <!-- Countdown -->
-    <div id="countdown">⏳ Countdown: Loading...</div>
-
-    <!-- Hero image -->
-    <img src="kids-coding.png" alt="Kids learning to code" class="hero-image" />
-
-    <!-- Email form -->
     <form action="https://formspree.io/f/xzzenkzl" method="POST">
       <input type="email" name="email" placeholder="Enter your email" required />
       <button type="submit">Notify Me</button>
     </form>
 
-    <!-- Launch fireworks -->
-    <div id="launch-animation">
-      <lottie-player
-        src="https://lottie.host/c40c97df-d9c1-4b07-a925-7e95c556b7f5/Bdpjw92Yen.json"
-        background="transparent"
-        speed="1"
-        loop
-        autoplay>
-      </lottie-player>
-    </div>
+    <img src="kids-coding.png" alt="Kids learning to code" class="coding-img" />
+  </main>
 
-  </div>
-
-  <!-- Countdown Script -->
   <script>
-    const countdownEl = document.getElementById('countdown');
-    const launchAnimation = document.getElementById('launch-animation');
-    const launchDate = new Date("2025-06-20T00:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+    const launchDate = new Date("June 20, 2025 00:00:00").getTime();
 
-    const interval = setInterval(() => {
+    function updateCountdown() {
       const now = new Date().getTime();
       const distance = launchDate - now;
 
-      if (distance <= 0) {
-        clearInterval(interval);
-        countdownEl.innerHTML = "🎉 We’ve launched!";
-        launchAnimation.style.display = "block";
+      if (distance < 0) {
+        countdownEl.textContent = "🎉 We're live!";
         return;
       }
 
@@ -154,8 +130,12 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      countdownEl.innerHTML = `⏳ Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }, 1000);
+      countdownEl.textContent = `⏳ Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   </script>
+
 </body>
 </html>
