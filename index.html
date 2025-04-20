@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Junior Coders - Coming Soon</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -14,91 +13,117 @@
     }
     body {
       font-family: 'Fredoka One', cursive;
-      background: linear-gradient(180deg, #fff1f0 0%, #ffd5e5 100%);
-      text-align: center;
+      background: linear-gradient(180deg, #ffe9f0, #ffd6e0);
       color: #333;
       padding: 20px;
+      overflow-x: hidden;
     }
-    header {
+
+    .logo-bar {
       display: flex;
       align-items: center;
-      padding-bottom: 10px;
+      justify-content: flex-start;
+      background-color: #ffe4ee;
+      padding: 10px 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
     }
-    header img {
+    .logo-bar img {
       height: 60px;
-      margin-right: 10px;
     }
-    header h1 {
-      font-size: 2rem;
-      color: #ff4c98;
-      margin: 0;
+
+    .main-heading {
+      font-size: 2.5rem;
+      color: #ff3399;
+      text-align: center;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
     }
-    .main-content {
-      max-width: 600px;
-      margin: 0 auto;
-    }
+
     .tagline {
       font-size: 1.3rem;
-      margin: 15px 0 30px;
+      margin: 10px auto 25px;
+      color: #ff4c4c;
+      text-align: center;
     }
+
+    .main-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
     .countdown {
       font-size: 1.1rem;
-      color: #ff4c4c;
+      color: #e91e63;
       margin-bottom: 30px;
+      font-weight: bold;
+      text-align: center;
     }
-    .animation {
-      max-width: 300px;
-      margin: 0 auto 20px;
-    }
-    form {
-      margin-top: 20px;
-    }
-    input[type="email"] {
-      padding: 10px 15px;
-      border: 2px solid #ffb3d9;
-      border-radius: 8px;
-      font-size: 1rem;
-      margin-right: 10px;
-      width: 250px;
-      max-width: 90%;
-    }
-    button {
-      background-color: #ff4c98;
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #e04384;
-    }
-    img.main-img {
+
+    .main-img {
       max-width: 100%;
       height: auto;
       display: block;
-      margin: 30px auto 0;
+      margin: 0 auto 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
+
+    form {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    input[type="email"] {
+      padding: 12px 18px;
+      border: 2px solid #ff99cc;
+      border-radius: 10px;
+      font-size: 1rem;
+      margin-right: 10px;
+      width: 260px;
+      max-width: 90%;
+    }
+
+    button {
+      background-color: #ff3399;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e62e8d;
+    }
+
     @media screen and (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: center;
+      .logo-bar {
+        justify-content: center;
       }
-      header img {
-        margin-bottom: 10px;
+      input[type="email"] {
+        display: block;
+        margin: 10px auto;
+      }
+      button {
+        margin-top: 10px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <!-- Logo bar top left -->
+  <div class="logo-bar">
     <img src="logo-placeholder.png" alt="Junior Coders Logo">
-    <h1>Junior Coders</h1>
-  </header>
+  </div>
 
+  <!-- Main heading & tagline -->
   <div class="main-content">
+    <h1 class="main-heading">Junior Coders</h1>
     <p class="tagline">🖍️ Kids are learning to code — and we're almost ready to launch!<br>Stay in the loop!</p>
 
     <div class="countdown" id="countdown">⏳ Countdown: Loading...</div>
