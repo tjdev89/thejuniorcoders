@@ -14,42 +14,128 @@
     }
     body {
       font-family: 'Fredoka One', cursive;
-      background: linear-gradient(180deg, #ffe0ec 0%, #d0f0ff 100%);
-      color: #3a3a3a;
+      background: linear-gradient(180deg, #fff1f0 0%, #ffd5e5 100%);
+      text-align: center;
+      color: #333;
       padding: 20px;
     }
     header {
       display: flex;
       align-items: center;
-      gap: 15px;
+      padding-bottom: 10px;
     }
-    .logo {
-      max-width: 140px;
-      height: auto;
+    header img {
+      height: 60px;
+      margin-right: 10px;
     }
-    main {
-      text-align: center;
-      margin-top: 20px;
+    header h1 {
+      font-size: 2rem;
+      color: #ff4c98;
+      margin: 0;
     }
-    h1 {
-      font-size: 3rem;
-      color: #ff4081;
-      margin-bottom: 10px;
+    .main-content {
+      max-width: 600px;
+      margin: 0 auto;
     }
-    p {
+    .tagline {
       font-size: 1.3rem;
-      margin-bottom: 20px;
-      color: #333;
+      margin: 15px 0 30px;
     }
     .countdown {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      color: #555;
+      font-size: 1.1rem;
+      color: #ff4c4c;
+      margin-bottom: 30px;
     }
     .animation {
       max-width: 300px;
-      margin: 0 auto 25px;
+      margin: 0 auto 20px;
     }
     form {
-      margin-top: 30px;
+      margin-top: 20px;
     }
+    input[type="email"] {
+      padding: 10px 15px;
+      border: 2px solid #ffb3d9;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-right: 10px;
+      width: 250px;
+      max-width: 90%;
+    }
+    button {
+      background-color: #ff4c98;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e04384;
+    }
+    img.main-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 30px auto 0;
+    }
+    @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+      header img {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo-placeholder.png" alt="Junior Coders Logo">
+    <h1>Junior Coders</h1>
+  </header>
+
+  <div class="main-content">
+    <p class="tagline">🖍️ Kids are learning to code — and we're almost ready to launch!<br>Stay in the loop!</p>
+
+    <div class="countdown" id="countdown">⏳ Countdown: Loading...</div>
+
+    <img src="kids-coding.png" alt="Kids learning to code" class="main-img" />
+
+    <form action="https://formspree.io/f/xzzenkzl" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Notify Me</button>
+    </form>
+  </div>
+
+  <script>
+    // Countdown Timer
+    const countdownElement = document.getElementById("countdown");
+    const launchDate = new Date("June 20, 2025 00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance < 0) {
+        countdownElement.innerHTML = "🎉 We're Live!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `⏳ Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+</body>
+</html>
