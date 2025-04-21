@@ -13,47 +13,47 @@
     }
     body {
       font-family: 'Fredoka One', cursive;
-      background: linear-gradient(180deg, #e0f7fa, #b2ebf2);
+      background: linear-gradient(180deg, #ffd6ff, #d1f3ff, #c8ffe0);
       color: #333;
       padding: 20px;
       overflow-x: hidden;
     }
 
-    /* Navbar */
-    .navbar {
-      background-color: #e0f2f1;
+    .logo-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffe4ee;
       padding: 10px 20px;
       border-radius: 12px;
-      margin-bottom: 25px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    .navbar-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      margin-bottom: 20px;
       flex-wrap: wrap;
     }
-    .nav-logo {
-      height: 50px;
+
+    .logo-bar img {
+      height: 60px;
     }
+
     .nav-links {
-      list-style: none;
       display: flex;
       gap: 20px;
     }
+
     .nav-links a {
       text-decoration: none;
-      color: #009688;
+      color: #4caf50;
       font-size: 1.1rem;
-      transition: color 0.3s ease;
+      font-weight: bold;
+      transition: color 0.3s;
     }
+
     .nav-links a:hover {
-      color: #00796b;
+      color: #2196f3;
     }
 
     .main-heading {
       font-size: 2.5rem;
-      color: #00796b;
+      color: #009688;
       text-align: center;
       margin-bottom: 10px;
       letter-spacing: 1px;
@@ -62,7 +62,7 @@
     .tagline {
       font-size: 1.3rem;
       margin: 10px auto 25px;
-      color: #00796b;
+      color: #ff4c4c;
       text-align: center;
     }
 
@@ -74,7 +74,7 @@
 
     .countdown {
       font-size: 1.1rem;
-      color: #004d40;
+      color: #e91e63;
       margin-bottom: 30px;
       font-weight: bold;
       text-align: center;
@@ -96,7 +96,7 @@
 
     input[type="email"] {
       padding: 12px 18px;
-      border: 2px solid #80cbc4;
+      border: 2px solid #ff99cc;
       border-radius: 10px;
       font-size: 1rem;
       margin-right: 10px;
@@ -105,7 +105,7 @@
     }
 
     button {
-      background-color: #009688;
+      background-color: #ff3399;
       color: white;
       border: none;
       padding: 12px 20px;
@@ -116,14 +116,18 @@
     }
 
     button:hover {
-      background-color: #00796b;
+      background-color: #e62e8d;
     }
 
     @media screen and (max-width: 600px) {
-      .nav-links {
+      .logo-bar {
         flex-direction: column;
-        gap: 10px;
+        align-items: flex-start;
+      }
+      .nav-links {
         margin-top: 10px;
+        justify-content: flex-start;
+        width: 100%;
       }
       input[type="email"] {
         display: block;
@@ -137,16 +141,13 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-container">
-      <img src="logo-placeholder.png" alt="Junior Coders Logo" class="nav-logo">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="logo-bar">
+    <img src="logo-placeholder.png" alt="Junior Coders Logo">
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
 
   <div class="main-content">
     <h1 class="main-heading">Junior Coders</h1>
