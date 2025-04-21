@@ -8,96 +8,99 @@
   <style>
     body {
       font-family: 'Fredoka One', cursive;
-      background: linear-gradient(180deg, #e3f2fd, #bbdefb);
+      background: linear-gradient(180deg, #e0f7fa, #b2ebf2);
       color: #333;
       padding: 20px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .logo-bar {
-      display: flex;
-      align-items: center;
-      background-color: #e1f5fe;
+    .navbar {
+      background-color: #e0f2f1;
       padding: 10px 20px;
       border-radius: 12px;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
-    .logo-bar img {
-      height: 60px;
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      height: 50px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #009688;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00796b;
+    }
+
+    .main-content {
+      max-width: 800px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     h1 {
-      font-size: 2.5rem;
-      color: #1e90ff;
       text-align: center;
+      color: #00796b;
+      font-size: 2.5rem;
       margin-bottom: 20px;
     }
 
     p {
-      font-size: 1.2rem;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      line-height: 1.7;
       color: #444;
-      margin-bottom: 20px;
-      text-align: justify;
-    }
-
-    a.button {
-      display: inline-block;
-      background-color: #1e90ff;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-      text-align: center;
-    }
-
-    a.button:hover {
-      background-color: #1976d2;
     }
 
     @media screen and (max-width: 600px) {
-      .logo-bar {
-        justify-content: center;
-      }
-      h1 {
-        font-size: 2rem;
-      }
-      p {
-        font-size: 1rem;
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo -->
-  <div class="logo-bar">
-    <img src="logo-placeholder.png" alt="Junior Coders Logo">
-  </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <img src="logo-placeholder.png" alt="Junior Coders Logo" class="nav-logo">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <!-- Main content -->
-  <div class="container">
-    <h1>About Junior Coders</h1>
+  <div class="main-content">
+    <h1>About Us</h1>
     <p>
-      Junior Coders is a fun and creative platform designed to introduce kids to the world of coding! 🎨💻<br><br>
-      Our mission is to help young minds explore technology in an exciting and age-appropriate way. From building games to solving puzzles, we believe every child has the potential to become a great coder.
+      Junior Coders is on a mission to make coding fun and accessible for kids of all ages. 🚀<br><br>
+      We believe the future belongs to creators and thinkers, and coding is one of the most empowering skills children can learn today.<br><br>
+      From drag-and-drop blocks to real-world programming languages, we’re building a platform that grows with your child’s curiosity.<br><br>
+      Stay tuned for our launch — and join us in nurturing the next generation of tech leaders! 💻🎉
     </p>
-    <p>
-      We provide engaging content, hands-on projects, and a safe environment where kids can learn and grow at their own pace. Whether your child is just starting out or already curious about computers, Junior Coders is here to spark that imagination!
-    </p>
-    <p>
-      Launching soon — and we can’t wait to welcome you! 🚀
-    </p>
-
-    <a class="button" href="index.html">← Back to Home</a>
   </div>
 
 </body>
