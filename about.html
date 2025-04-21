@@ -8,98 +8,92 @@
   <style>
     body {
       font-family: 'Fredoka One', cursive;
-      background: linear-gradient(180deg, #e0f7fa, #b2ebf2);
+      background: linear-gradient(180deg, #ffd6ff, #d1f3ff, #c8ffe0);
       color: #333;
       padding: 20px;
     }
 
-    .navbar {
-      background-color: #e0f2f1;
+    .logo-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffe4ee;
       padding: 10px 20px;
       border-radius: 12px;
-      margin-bottom: 25px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .navbar-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      margin-bottom: 20px;
       flex-wrap: wrap;
     }
 
-    .nav-logo {
-      height: 50px;
+    .logo-bar img {
+      height: 60px;
     }
 
     .nav-links {
-      list-style: none;
       display: flex;
       gap: 20px;
     }
 
     .nav-links a {
       text-decoration: none;
-      color: #009688;
+      color: #4caf50;
       font-size: 1.1rem;
-      transition: color 0.3s ease;
+      font-weight: bold;
+      transition: color 0.3s;
     }
 
     .nav-links a:hover {
-      color: #00796b;
+      color: #2196f3;
     }
 
     .main-content {
       max-width: 800px;
-      margin: auto;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     h1 {
-      text-align: center;
-      color: #00796b;
       font-size: 2.5rem;
+      color: #009688;
+      text-align: center;
       margin-bottom: 20px;
     }
 
     p {
-      font-size: 1.1rem;
-      line-height: 1.7;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      text-align: center;
       color: #444;
     }
 
     @media screen and (max-width: 600px) {
-      .nav-links {
+      .logo-bar {
         flex-direction: column;
-        gap: 10px;
+        align-items: flex-start;
+      }
+      .nav-links {
         margin-top: 10px;
+        justify-content: flex-start;
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-container">
-      <img src="logo-placeholder.png" alt="Junior Coders Logo" class="nav-logo">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="logo-bar">
+    <img src="logo-placeholder.png" alt="Junior Coders Logo">
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
 
   <div class="main-content">
     <h1>About Us</h1>
     <p>
-      Junior Coders is on a mission to make coding fun and accessible for kids of all ages. 🚀<br><br>
-      We believe the future belongs to creators and thinkers, and coding is one of the most empowering skills children can learn today.<br><br>
-      From drag-and-drop blocks to real-world programming languages, we’re building a platform that grows with your child’s curiosity.<br><br>
-      Stay tuned for our launch — and join us in nurturing the next generation of tech leaders! 💻🎉
+      Junior Coders is a playful platform designed to introduce kids to the world of programming in a fun, interactive way! 🎨💻<br><br>
+      We believe coding is for everyone — especially curious little minds. Our colorful lessons and hands-on challenges aim to make learning joyful, accessible, and creative. <br><br>
+      🚀 We're almost ready to launch — stay tuned and join us on this exciting journey!
     </p>
   </div>
 
